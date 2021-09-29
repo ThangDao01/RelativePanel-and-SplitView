@@ -9,42 +9,24 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource AppBarBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <RelativePanel MinHeight="300" Grid.Row="1">
-            <Rectangle x:Name="RedRectangle"
-                       Fill="Red"
-                       Width="100"
-                       Height="100"
-                       RelativePanel.AlignRightWithPanel="True"/>
-            <Rectangle x:Name="BlueRectangle"
-                       Fill="Blue"
-                       Width="50"
-                       Height="50"
-                       RelativePanel.LeftOf="RedRectangle"/>
-            <Rectangle x:Name="GreenRectangle"
-                       Fill="Green"
-                       Width="50"
-                       Height="50"
-                       RelativePanel.AlignVerticalCenterWith="RedRectangle"
-                       RelativePanel.AlignHorizontalCenterWithPanel="True"/>
-            <Rectangle x:Name="YellowRectangle"
-                       Fill="Yellow"
-                       MinWidth="50"
-                       MinHeight="50"
-                       RelativePanel.AlignBottomWithPanel="True"
-                       RelativePanel.AlignTopWith="PurpleRectangle"/>
-            <Rectangle x:Name="PurpleRectangle"
-                       Fill="Purple"
-                       MinWidth="50"
-                       MinHeight="50"
-                       RelativePanel.Below="RedRectangle"
-                       RelativePanel.AlignRightWith="RedRectangle"
-                       RelativePanel.AlignLeftWith="GreenRectangle"/>
-        </RelativePanel>
+        <SplitView Name="MySplitView" DisplayMode="Overlay">
+            <SplitView.Pane>
+                <StackPanel>
+                    <TextBlock Text="First"/>
+                    <TextBlock Text="Second"/>
+                    <TextBlock Text="Thrid"/>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <StackPanel>
+                    <TextBlock Text="Four"/>
+                    <TextBlock Text="Fifth"/>
+                    <TextBlock Text="Six"/>
+                </StackPanel>
+            </SplitView.Content>
+        </SplitView>
+        <Button Content="Click Me" Click="Button_Click"/>
+
 
     </Grid>
 </Page>
